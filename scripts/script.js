@@ -1,3 +1,15 @@
+/*TODO: 
+validate form input
+styling
+change delete icon to trashcan
+pressed button when read, unpressed when not, maybe add check
+
+EXTRA:
+sort by insertion date, title, author, year (copy with splice, then sort)
+double click to delete
+edit book
+*/
+
 const bookContainer = document.querySelector('.book-container');
 const addBtn = document.querySelector('.utility__add-btn');
 const dialog = document.querySelector('.dialog');
@@ -47,9 +59,13 @@ function addBookToContainer(book) {
   authorElement.classList.add('book__author');
   authorElement.textContent = author;
 
-  const infoElement = document.createElement('p');
-  infoElement.classList.add('book__info');
-  infoElement.innerHTML = `released in <span class="book__year">${year}</span> | <span class="book__pages">${pages}</span> pages`;
+  const yearElem = document.createElement('p');
+  yearElem.classList.add('book__year');
+  yearElem.textContent = `published ${year}`;
+
+  const pagesElem = document.createElement('p');
+  pagesElem.classList.add('book__pages');
+  pagesElem.textContent = `${pages} pages`;
 
   const readButton = document.createElement('button');
   readButton.classList.add('book__read-btn');
@@ -63,7 +79,8 @@ function addBookToContainer(book) {
 
   bookElement.appendChild(titleElement);
   bookElement.appendChild(authorElement);
-  bookElement.appendChild(infoElement);
+  bookElement.appendChild(yearElem);
+  bookElement.appendChild(pagesElem);
   bookElement.appendChild(readButton);
   bookElement.appendChild(removeButton);
 
@@ -93,7 +110,6 @@ function removeBook(book) {
   library.splice(bookInd, 1);
   book.remove();
 }
-
 
 addBtn.addEventListener("click", () => {
   dialog.showModal();
