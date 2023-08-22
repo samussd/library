@@ -1,0 +1,125 @@
+:root {
+  --bg-pri-clr: rgb(253, 253, 253);
+  --bg-sec-clr: rgb(210, 230, 236);
+  --accent-clr: rgb(40, 158, 217);
+  --highlight-clr: rgb(237, 162, 13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+hr {
+  opacity: 70%;
+  border-width: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.utility {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background-color: var(--bg-pri-clr);
+}
+
+.utility__add-btn {
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+
+  background-color: var(--bg-sec-clr);
+}
+
+.book {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+
+  border-radius: 10px;
+  background-color: aquamarine;
+}
+
+.book__remove-btn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.book[data-read='true'] .book__read-btn {
+  background-color: green;
+}
+
+.book[data-read='false'] .book__read-btn {
+  background-color: red;
+}
+
+
