@@ -7,53 +7,59 @@
   <title>Library</title>
   <meta name="description" content="Online library app.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <header class="header">
-    <h1 class="logo">Library</h1>
+    <div class="header__logo"></div>
+    <h1 class="header__text">Library</h1>
   </header>
 
   <main class="main">
     <dialog class="dialog">
       <p class="dialog__title">Add a book</p>
-      <form class="dialog__form" method="dialog">
-        <label for="book-name-input">Book Name:</label>
-        <input type="text" id="book-name-input" placeholder="Enter book name" required><br>
+      <form class="dialog__form" id="dialog-form" method="dialog">
+        <div class="dialog__pair">
+          <label for="book-name-input">Book*</label>
+          <input type="text" id="book-name-input" placeholder="Book name" required><br>
+        </div>
 
-        <label for="author-input">Author:</label>
-        <input type="text" id="author-input" placeholder="Enter author's name" required><br>
+        <div class="dialog__pair">
+          <label for="author-input">Author*</label>
+          <input type="text" id="author-input" placeholder="Author's name" required><br>
+        </div>
 
-        <label for="year-input">Year:</label>
-        <input type="number" id="year-input" placeholder="Enter publication year"><br>
+        <div class="dialog__pair">
+          <label for="year-input">Year</label>
+          <input type="number" id="year-input" placeholder="Publication year"><br>
+        </div>
 
-        <label for="year-input">Pages:</label>
-        <input type="number" id="pages-input" placeholder="Enter number of pages"><br>
+        <div class="dialog__pair">
+          <label for="year-input">Pages</label>
+          <input type="number" id="pages-input" placeholder="Number of pages"><br>
+        </div>
 
-        <label for="read-checkbox">Read:</label>
-        <input type="checkbox" id="read-checkbox" value="true"><br>
+        <div class="dialog__pair">
+          <label for="read-checkbox">Read it?</label>
+          <input type="checkbox" id="read-checkbox" value="true"><br>
+        </div>
 
-        <button class="dialog__submit-btn" value="default" type="submit">Add</button>
+        <button class="dialog__submit-btn" value="default" type="submit" form="dialog-form">Add</button>
       </form>
     </dialog>
 
     <div class="utility">
-      <button class="utility__add-btn" type="button">NEW BOOK</button>
+      <button class="utility__add-btn" type="button">NEW BOOK +</button>
     </div>
 
     <div class="book-container">
-      <!--
-      <div class="book" data-title="Title" data-author="Author" data-year="2000" data-pages="256" data-read="false">
-        <h2 class="book__title">Title</h2>
-        <h3 class="book__author">Author</h3>
-        <p class="book__info">
-          released in <span class="book__year">2000</span> | <span class="book__pages">256</span> pages
-        </p>
-        <button class="book__read-btn" type="button">NOT READ</button>
-        <button class="book__remove-btn" type="button">X</button>
-      </div>
-    -->
+
+
     </div>
   </main>
 
