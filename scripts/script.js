@@ -6,17 +6,26 @@ const submitBtn = document.querySelector('.dialog__submit-btn');
 
 const library = [];
 
-function Book(title, author, year, pages, read) {
-  this.author = author;
-  this.title = title;
-  this.year = year;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, year, pages, read) {
+    this._title = title;
+    this._author = author;
+    this._year = year;
+    this._pages = pages;
+    this._read = read;
+  }
 
-  this.toggleReadStatus = function () {
-    this.read = !this.read;
+  get title() { return this._title; }
+  get author() { return this._author; }
+  get year() { return this._year; }
+  get pages() { return this._pages; }
+  get read() { return this._read; }
+
+  toggleReadStatus() {
+    this._read = !this._read;
   }
 }
+
 
 function addBookToLibrary(title, author, year, pages, read) {
   const book = new Book(title, author, year, pages, read);
